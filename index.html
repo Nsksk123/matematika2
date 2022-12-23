@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumus Matemaika</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link href="http://fonts.cdnfonts.com/css/8bit-wonder" rel="stylesheet">
+</head>
+<body>
+    <div class="parent">
+        <nav class="navbar navbar-light bg-danger">
+            <div class="container-fluid">
+              <a class="navbar-brand text-white" href="#">Home</a>
+              <form class="d-flex">
+                <select id="selection" style="width: 100%;">
+                    <option selected>Pilih Rumus</option>
+                    <option value="1" id="bungaTunggalMn">Bunga Tunggal(Mn)</option>
+                    <option value="2" id="bungaTunggalMo">Bunga Tunggal(Mo)</option>
+                    <option value="3" id="bungaTunggalI">Bunga Tunggal(i)</option>
+                    <option value="4" id="bungaTunggalN">Bunga Tunggal(n)</option>
+                    <option value="5" id="bungaMajemukMn">Bunga Majemuk(Mn)</option>
+                    <option value="6" id="bungaMajemukMo">Bunga Majemuk(Mo)</option>
+                    <option value="7" id="bungaMajemukI">Bunga Majemuk(i)</option>
+                    <option value="8" id="bungaMajemukN">Bunga Majemuk(n)</option>
+                    <option value="9" id="Anuitas">Anuitas(A)</option>
+                    <option value="10" id="moAnuitas">Anuitas(Mo)</option>
+                    <option value="11" id="nAnuitas">Anuitas(n)</option>
+                </select>
+                <button class="btn btn-outline-light" type="button" onclick="pilihRumus()">Search</button>
+              </form>
+            </div>
+          </nav>
+    
+    <!-- mencari Bunga Tunggal Mn -->
+    <div class="shadow p-3 mb-5 bg-body rounded" id="mnTunggal">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputMo" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputI" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputN" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilMnTunggal"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMnTunggalc" onclick="mnTunggal()">Cari</button>
+    </div>
+    
+    <!-- Bunga Tunggal Mo -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="moTunggal">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputMn" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputI1" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputN1" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilMoTunggal"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="moTunggal()">Cari</button>
+    </div>
+
+    <!-- Bunga Tunggal i -->
+    <div class="shadow p-3 mb-5 bg-body rounded" id="iTunggal">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="input-Mn" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="input-Mo" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="input-n" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilITunggal"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="tunggalI()">Cari</button>
+    </div>
+    
+    <!-- Bunga Tunggal n -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="nTunggal">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputMnTunggal" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputMoTunggal" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputITunggal" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilNTunggal"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="tunggalN()">Cari</button>
+    </div>
+
+    <!-- Bunga Majemuk Mn -->
+    <div class="shadow p-3 mb-5 bg-body rounded" id="mnMajemuk">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMo" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukI" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukN" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusBungaMajemukMn"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilMajemukMn()">Cari</button>
+    </div>
+    
+    <!-- Bunga Majemuk Mo -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="moMajemuk">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMn1" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukI1" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukN1" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusBungaMajemukMo"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilBungaMajemukMo()">Cari</button>
+    </div>
+
+    <!-- Bunga Majemuk i -->
+    <div class="shadow p-3 mb-5 bg-body rounded" id="iMajemuk">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMn2" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMo2" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukN2" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusBungaMajemukI"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilBungaMajemukI()">Cari</button>
+    </div>
+    
+    <!-- Bunga Majemuk n -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="nMajemuk">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mn</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMn3" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukMo3" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputBungaMajemukI3" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusBungaMajemukN"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilBungaMajemukN()">Cari</button>
+    </div>
+    
+    <!-- Anuitas -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="anuitas">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasMo1" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasI1" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasN1" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusAnuitas1"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilAnuitas1()">Cari</button>
+    </div>
+
+    
+    <!-- Anuitas -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="anuitasMo">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan A</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitas2" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasI2" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan n</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasN2" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusAnuitasMo"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilAnuitasMo()">Cari</button>
+    </div>
+
+    
+    <!-- Anuitas -->
+
+    <div class="shadow p-3 mb-5 bg-body rounded" id="anuitasN">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label>Masukan A</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitas3" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan Mo</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasMo3" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Masukan i</label>
+                    </td>
+                    <td>
+                        <input type="number" id="inputAnuitasI3" class="form-control">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <label id="hasilRumusAnuitasN"></label><br><br>
+        <button class="btn btn-outline-danger" id="buttonMoTunggal" onclick="hasilAnuitasN()">Cari</button>
+    </div>
+    
+</div>
+
+    
+    <!-- File javascript -->
+    <script src="index.js"></script>
+</body>
+</html>
